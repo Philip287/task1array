@@ -6,7 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ArrayValidator {
-    private static final Logger logger = LogManager.getLogger(ArrayValidator.class);
+    private static final Logger logger = LogManager.getLogger(ArrayValidator.class.getName());
 
     public boolean validateToNull(CustomArray array){
         return array == null || array.getArray().length == 0;

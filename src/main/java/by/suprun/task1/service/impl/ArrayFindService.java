@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 public class ArrayFindService implements ArrayFindInterface {
     private static final ArrayValidator validator = new ArrayValidator();
-    private static final Logger logger = LogManager.getLogger(ArrayFindService.class);
+    private static final Logger logger = LogManager.getLogger(ArrayFindService.class.getName());
 
     @Override
     public int arrayMin(CustomArray customArray) throws CustomArrayException {

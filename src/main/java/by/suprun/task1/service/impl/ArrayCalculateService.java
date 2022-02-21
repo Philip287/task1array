@@ -9,16 +9,16 @@ import org.apache.logging.log4j.Logger;
 
 public class ArrayCalculateService implements ArrayCalculateInterface {
     private static final ArrayValidator validator = new ArrayValidator();
-    private static final Logger logger = LogManager.getLogger(ArrayCalculateService.class);
+    private static final Logger logger = LogManager.getLogger(ArrayCalculateService.class.getName());
 
     @Override
     public int sumElementsOfArray(CustomArray customArray) throws CustomArrayException{
         logger.info("Method sumElementsOfArray is coled.");
-        validator.validateToEmpty(customArray);
+        //validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
         int sum = 0;
         for (int element : tempArray) {
-            sum = sum + element;
+            sum = (sum + element);
         }
         return sum;
     }

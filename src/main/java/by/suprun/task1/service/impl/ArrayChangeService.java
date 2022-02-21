@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 public class ArrayChangeService implements ArrayChangeInterface {
     private static final ArrayValidator validator = new ArrayValidator();
-    private static final Logger logger = LogManager.getLogger(ArrayChangeService.class);
+    private static final Logger logger = LogManager.getLogger(ArrayChangeService.class.getName());
 
     @Override
     public void changeElement(CustomArray customArray, int position, int elementToAdd) throws CustomArrayException {

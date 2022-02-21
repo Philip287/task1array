@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 public class ArraySortService implements ArraySortInterface {
     ArrayValidator validator = new ArrayValidator();
-    private static final Logger logger = LogManager.getLogger(ArraySortService.class);
+    private static final Logger logger = LogManager.getLogger(ArraySortService.class.getName());
 
     @Override
     public void bubbleSort(CustomArray customArray) throws CustomArrayException {
@@ -33,6 +33,9 @@ public class ArraySortService implements ArraySortInterface {
         logger.info("Method quickSort is called");
         validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
+
+
+        customArray.setArray(tempArray);
     }
 
     @Override
@@ -40,5 +43,7 @@ public class ArraySortService implements ArraySortInterface {
         logger.info("Method shellSort is called");
         validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
+
+        customArray.setArray(tempArray);
     }
 }
