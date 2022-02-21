@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 
 public class ArraySortServiceTest {
     private static final Logger logger = LogManager.getLogger(ArraySortServiceTest.class.getName());
-    private static ArraySortService arraySortServiceTest = new ArraySortService();
+    private static final ArraySortService arraySortServiceTest = new ArraySortService();
     private final int[] TEST_ARRAY = {5, 2, 11, 9, 8};
 
     @Test
