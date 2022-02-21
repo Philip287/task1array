@@ -14,7 +14,7 @@ public class ArrayCalculateService implements ArrayCalculateInterface {
     @Override
     public int sumElementsOfArray(CustomArray customArray) throws CustomArrayException{
         logger.info("Method sumElementsOfArray is coled.");
-        //validator.validateToEmpty(customArray);
+        validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
         int sum = 0;
         for (int element : tempArray) {
