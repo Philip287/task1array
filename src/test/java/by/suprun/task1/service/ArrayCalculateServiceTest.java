@@ -11,11 +11,11 @@ import org.testng.annotations.Test;
 public class ArrayCalculateServiceTest extends Assert {
     ArrayCalculateService arrayCalculateService = new ArrayCalculateService();
     private static final Logger logger = LogManager.getLogger(ArrayCalculateServiceTest.class.getName());
-    private final int[] testArray = {5, 2, 8, 11, 9};
+    private final int[] TEST_ARRAY = {5, 2, 8, 11, 9};
 
     @Test
     public void sumElementsOfArrayTest() throws CustomArrayException {
-        CustomArray customArray = new CustomArray(testArray);
+        CustomArray customArray = new CustomArray(TEST_ARRAY);
         int actualSum = arrayCalculateService.sumElementsOfArray(customArray);
         int expected = 35;
         assertEquals(actualSum, expected);
@@ -24,7 +24,7 @@ public class ArrayCalculateServiceTest extends Assert {
 
     @Test
     public void averageOfArrayTest() throws CustomArrayException {
-        CustomArray customArray = new CustomArray(testArray);
+        CustomArray customArray = new CustomArray(TEST_ARRAY);
         double actualAverage = arrayCalculateService.averageOfArray(customArray);
         double expected = 7.0;
         assertEquals(actualAverage, expected, 0.0);

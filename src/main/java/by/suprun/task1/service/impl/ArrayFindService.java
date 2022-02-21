@@ -3,7 +3,7 @@ package by.suprun.task1.service.impl;
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
 import by.suprun.task1.service.ArrayFindInterface;
-import by.suprun.task1.validate.ArrayValidator;
+import by.suprun.task1.validate.iml.ArrayValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

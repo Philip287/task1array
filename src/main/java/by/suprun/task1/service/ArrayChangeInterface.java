@@ -5,4 +5,5 @@ import by.suprun.task1.exception.CustomArrayException;
 
 public interface ArrayChangeInterface {
     void changeElement(CustomArray customArray, int position, int elementToAdd) throws CustomArrayException;
+
 }

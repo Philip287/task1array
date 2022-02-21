@@ -3,7 +3,7 @@ package by.suprun.task1.service.impl;
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
 import by.suprun.task1.service.ArrayChangeInterface;
-import by.suprun.task1.validate.ArrayValidator;
+import by.suprun.task1.validate.iml.ArrayValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +16,7 @@ public class ArrayChangeService implements ArrayChangeInterface {
         logger.info("Method changeElements is called");
         validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
-        if (position <= tempArray.length && position > 0) {
+        if (position <= tempArray.length && position >= 0) {
             tempArray[position] = elementToAdd;
             customArray.setArray(tempArray);
         } else {
