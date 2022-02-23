@@ -10,14 +10,14 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class ArraySortServiceTest {
-    private static final Logger logger = LogManager.getLogger(ArraySortServiceTest.class.getName());
-    ArraySortImpl arraySortServiceTest = new ArraySortImpl();
+    private static final Logger logger = LogManager.getLogger();
+    ArraySortImpl arraySortImplTest = new ArraySortImpl();
     private final int[] TEST_ARRAY = {5, 2, 11, 9, 8};
 
     @Test
     public void bubbleSortTest() throws CustomArrayException {
         CustomArray customArray = new CustomArray(TEST_ARRAY);
-        arraySortServiceTest.bubbleSort(customArray);
+        arraySortImplTest.bubbleSort(customArray);
         CustomArray expected = new CustomArray(2, 5, 8, 9, 11);
         assertEquals(customArray, expected);
         logger.info("bubbleSortTest is end");
@@ -26,7 +26,7 @@ public class ArraySortServiceTest {
     @Test
     public void insertionSortTest() throws CustomArrayException {
         CustomArray customArray = new CustomArray(TEST_ARRAY);
-        arraySortServiceTest.insertionSort(customArray);
+        arraySortImplTest.insertionSort(customArray);
         CustomArray expected = new CustomArray(2, 5, 8, 9, 11);
         assertEquals(customArray, expected);
         logger.info("insertionSortTest is end");
@@ -35,7 +35,7 @@ public class ArraySortServiceTest {
     @Test
     public void selectionSortTest() throws CustomArrayException {
         CustomArray customArray = new CustomArray(TEST_ARRAY);
-        arraySortServiceTest.selectionSort(customArray);
+        arraySortImplTest.selectionSort(customArray);
         CustomArray expected = new CustomArray(2, 5, 8, 9, 11);
         assertEquals(customArray, expected);
         logger.info("selectionSortTest is end");

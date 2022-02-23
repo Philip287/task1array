@@ -3,13 +3,13 @@ package by.suprun.task1.service.impl;
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
 import by.suprun.task1.service.ArrayFindService;
-import by.suprun.task1.validate.iml.ArrayValidator;
+import by.suprun.task1.validate.ArrayValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ArrayFindImpl implements ArrayFindService {
     private static final ArrayValidator validator = new ArrayValidator();
-    private static final Logger logger = LogManager.getLogger(ArrayFindImpl.class.getName());
+    private static final Logger logger = LogManager.getLogger();
 
     @Override
     public int arrayMin(CustomArray customArray) throws CustomArrayException {
