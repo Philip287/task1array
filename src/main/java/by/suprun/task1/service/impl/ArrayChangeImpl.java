@@ -2,14 +2,14 @@ package by.suprun.task1.service.impl;
 
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
-import by.suprun.task1.service.ArrayChangeInterface;
+import by.suprun.task1.service.ArrayChangeService;
 import by.suprun.task1.validate.iml.ArrayValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ArrayChangeService implements ArrayChangeInterface {
+public class ArrayChangeImpl implements ArrayChangeService {
     private static final ArrayValidator validator = new ArrayValidator();
-    private static final Logger logger = LogManager.getLogger(ArrayChangeService.class.getName());
+    private static final Logger logger = LogManager.getLogger(ArrayChangeImpl.class.getName());
 
     @Override
     public void changeElement(CustomArray customArray, int position, int elementToAdd) throws CustomArrayException {

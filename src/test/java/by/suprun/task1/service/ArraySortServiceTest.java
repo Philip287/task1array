@@ -2,7 +2,7 @@ package by.suprun.task1.service;
 
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
-import by.suprun.task1.service.impl.ArraySortService;
+import by.suprun.task1.service.impl.ArraySortImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
@@ -11,7 +11,7 @@ import static org.testng.Assert.assertEquals;
 
 public class ArraySortServiceTest {
     private static final Logger logger = LogManager.getLogger(ArraySortServiceTest.class.getName());
-    private static final ArraySortService arraySortServiceTest = new ArraySortService();
+    ArraySortImpl arraySortServiceTest = new ArraySortImpl();
     private final int[] TEST_ARRAY = {5, 2, 11, 9, 8};
 
     @Test

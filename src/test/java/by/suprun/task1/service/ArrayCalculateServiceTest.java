@@ -2,15 +2,15 @@ package by.suprun.task1.service;
 
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
-import by.suprun.task1.service.impl.ArrayCalculateService;
+import by.suprun.task1.service.impl.ArrayCalculateImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ArrayCalculateServiceTest extends Assert {
-    ArrayCalculateService arrayCalculateService = new ArrayCalculateService();
     private static final Logger logger = LogManager.getLogger(ArrayCalculateServiceTest.class.getName());
+    ArrayCalculateImpl arrayCalculateService = new ArrayCalculateImpl();
     private final int[] TEST_ARRAY = {5, 2, 8, 11, 9};
 
     @Test
