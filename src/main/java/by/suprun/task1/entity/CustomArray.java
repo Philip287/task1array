@@ -13,20 +13,15 @@ public class CustomArray {
 
     public CustomArray(int... array) throws CustomArrayException {
         if (array.length < 1) throw new CustomArrayException("Array must have 1 or mo elements.") ;
-        this.array = array;
+        this.array = array.clone();
     }
 
     public int[] getArray() {
-        int[] cloneArray = Arrays.copyOf(array, array.length);
-        return cloneArray;
+        return Arrays.copyOf(array, array.length);
     }
 
     public void setArray(int[] array) {
         this.array = array;
-    }
-
-    public boolean isArrayEmpty() {
-        return array == null;
     }
 
     @Override
@@ -34,11 +29,11 @@ public class CustomArray {
         if (array == null) {
             return "CustomArray is null";
         }
-        StringBuilder sb = new StringBuilder();
+        StringBuilder stringBuilder = new StringBuilder();
         for (int a : array) {
-            sb.append(a).append(" ");
+            stringBuilder.append(a).append(" ");
         }
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
     @Override

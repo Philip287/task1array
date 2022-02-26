@@ -8,10 +8,11 @@ import org.apache.logging.log4j.Logger;
 public class ArrayValidator {
     private static final Logger logger = LogManager.getLogger(ArrayValidator.class.getName());
 
-    public void validateToEmpty(CustomArray array) throws CustomArrayException {
+    public boolean validateToEmpty(CustomArray array) throws CustomArrayException {
         if (array == null || array.getArray().length == 0) {
             logger.error("Array is equal to null or array is empty");
             throw new CustomArrayException("Entity is equal to null or array is empty");
         }
+        return true;
     }
 }
