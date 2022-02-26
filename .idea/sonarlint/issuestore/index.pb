@@ -9,7 +9,5 @@ m
 =src/main/java/by/suprun/task1/service/impl/ArrayFindImpl.java,f\6\f6b859c1871111f4d0c58306b4f115376c07b08c
 m
 =src/main/java/by/suprun/task1/service/impl/ArraySortImpl.java,1\a\1a9035ce8477959a5322de459249ffd71e0f264a
-o
-?src/test/java/by/suprun/task1/service/ArraySortServiceTest.java,6\f\6f067e1f4bd72ea1c5888d91e7f27775533d6905
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec

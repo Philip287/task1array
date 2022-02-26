@@ -1,22 +1,20 @@
 package by.suprun.task1.validate;
 
-import by.suprun.task1.exception.CustomArrayException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 public class CustomArrayValidatorTest {
     private static final Logger logger = LogManager.getLogger();
     CustomArrayValidate customArrayValidate = new CustomArrayValidate();
 
-    @Ignore
     @Test
     public void validateToEmptyTestGoodString() {
         logger.info("Method validateToEmptyTestGoodString is start");
-        String testString = "1 - 3 - 5 - 7";
+        String testString = "1 3 5 7";
         boolean actual = customArrayValidate.isArrayLineIsValid(testString);
         assertTrue(actual);
     }

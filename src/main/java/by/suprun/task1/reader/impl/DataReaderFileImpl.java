@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class DtaReaderFileImpl implements DataReaderFile {
+public class DataReaderFileImpl implements DataReaderFile {
     private static final Logger logger = LogManager.getLogger();
 
     @Override
