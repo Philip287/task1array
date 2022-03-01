@@ -10,6 +10,18 @@ import org.apache.logging.log4j.Logger;
 public class ArrayChangeImpl implements ArrayChangeService {
     private static final ArrayValidator validator = new ArrayValidator();
     private static final Logger logger = LogManager.getLogger();
+    private static ArrayChangeImpl instance;
+
+    private ArrayChangeImpl() {
+
+    }
+
+    public static ArrayChangeImpl getInstance() {
+        if (instance == null) {
+            return new ArrayChangeImpl();
+        }
+        return instance;
+    }
 
     @Override
     public void changeElement(CustomArray customArray, int position, int elementToAdd) throws CustomArrayException {

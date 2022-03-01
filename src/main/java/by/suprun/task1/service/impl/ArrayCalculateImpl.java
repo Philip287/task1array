@@ -10,9 +10,21 @@ import org.apache.logging.log4j.Logger;
 public class ArrayCalculateImpl implements ArrayCalculateService {
     private static final ArrayValidator validator = new ArrayValidator();
     private static final Logger logger = LogManager.getLogger();
+    private static ArrayCalculateImpl instance;
+
+    private ArrayCalculateImpl() {
+
+    }
+
+    public static ArrayCalculateImpl getInstance() {
+        if (instance == null) {
+            return new ArrayCalculateImpl();
+        }
+        return instance;
+    }
 
     @Override
-    public int sumElementsOfArray(CustomArray customArray) throws CustomArrayException{
+    public int sumElementsOfArray(CustomArray customArray) throws CustomArrayException {
         logger.info("Method sumElementsOfArray is coled.");
         validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();

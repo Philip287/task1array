@@ -10,6 +10,18 @@ import org.apache.logging.log4j.Logger;
 public class ArraySortImpl implements ArraySortService {
     ArrayValidator validator = new ArrayValidator();
     private static final Logger logger = LogManager.getLogger();
+    private static ArraySortImpl instance;
+
+    private ArraySortImpl() {
+
+    }
+
+    public static ArraySortImpl getInstance() {
+        if (instance == null) {
+            return new ArraySortImpl();
+        }
+        return instance;
+    }
 
     @Override
     public void bubbleSort(CustomArray customArray) throws CustomArrayException {

@@ -5,16 +5,8 @@ k
 ;src/main/java/by/suprun/task1/service/ArraySortService.java,6\8\68b21e99f2e7243c1feba44b9c682e4ae5251f14
 k
 ;src/main/java/by/suprun/task1/service/ArrayFindService.java,8\c\8c5a7a7e15bee1f585bbfa2a1acfef38ca52b3a8
-m
-=src/main/java/by/suprun/task1/service/impl/ArrayFindImpl.java,f\6\f6b859c1871111f4d0c58306b4f115376c07b08c
-m
-=src/main/java/by/suprun/task1/service/impl/ArraySortImpl.java,1\a\1a9035ce8477959a5322de459249ffd71e0f264a
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-o
-?src/main/java/by/suprun/task1/service/impl/ArrayChangeImpl.java,f\d\fdd540eaf37513ea90e3d580d149b7fc6f904e9a
-r
-Bsrc/main/java/by/suprun/task1/service/impl/ArrayCalculateImpl.java,1\0\102e96328f9273423ee93f888b5dad3ed4faf4b1
 l
 <src/main/java/by/suprun/task1/creator/CreateCustomArray.java,5\f\5f2374ff750748c301f0d9d740c81bc6e74c63f2
 e

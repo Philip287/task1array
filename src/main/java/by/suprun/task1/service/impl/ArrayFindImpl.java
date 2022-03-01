@@ -10,6 +10,18 @@ import org.apache.logging.log4j.Logger;
 public class ArrayFindImpl implements ArrayFindService {
     private static final ArrayValidator validator = new ArrayValidator();
     private static final Logger logger = LogManager.getLogger();
+    private static ArrayFindImpl instance;
+
+    private ArrayFindImpl() {
+
+    }
+
+    public static ArrayFindImpl getInstance() {
+        if (instance == null) {
+            return new ArrayFindImpl();
+        }
+        return instance;
+    }
 
     @Override
     public int arrayMin(CustomArray customArray) throws CustomArrayException {
