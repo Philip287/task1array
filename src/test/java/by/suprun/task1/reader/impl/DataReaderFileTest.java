@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class DataReaderFileTest {
-    private static final Logger logger = LogManager.getLogger();
     DataReaderFileImpl dataReaderFileImpl = new DataReaderFileImpl();
 
     @Test(expectedExceptions = CustomArrayException.class)

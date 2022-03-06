@@ -9,7 +9,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ArrayChangeServiceTest extends Assert {
-    private static final Logger logger = LogManager.getLogger();
     private final int[] TEST_ARRAY = {5, 2, 8, 11, 9};
     CustomArrayChangeImpl customArrayChangeImplTest = CustomArrayChangeImpl.getInstance();
 
@@ -21,6 +20,5 @@ public class ArrayChangeServiceTest extends Assert {
         customArrayChangeImplTest.changeElement(customArray, position, elementToChange);
         CustomArray expected = new CustomArray(0, 2, 8, 11, 9);
         assertEquals(customArray, expected);
-        logger.info("ArrayChangeServiceTest is end");
     }
 }

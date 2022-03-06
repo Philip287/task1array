@@ -8,7 +8,6 @@ import by.suprun.task1.observer.impl.CustomArrayObserverImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 import java.util.Arrays;
 
 public class CustomArray implements CustomArrayObservable {
@@ -21,7 +20,7 @@ public class CustomArray implements CustomArrayObservable {
     }
 
     public CustomArray(int newId, int... array) throws CustomArrayException {
-        if (array.length < 1) throw new CustomArrayException("Array must have 1 or mo elements.") ;
+        if (array.length < 1) throw new CustomArrayException("Array must have 1 or mo elements.");
         this.array = array.clone();
         this.id = newId;
     }
@@ -33,14 +32,16 @@ public class CustomArray implements CustomArrayObservable {
     public void setArray(int[] array) {
         this.array = Arrays.copyOf(array, array.length);
     }
-    public void setId(int newId){
+
+    public void setId(int newId) {
         id = newId;
     }
 
-    public int getId(){
+    public int getId() {
         return id;
     }
-    public int getArrayLength(){
+
+    public int getArrayLength() {
         return array.length;
     }
 
@@ -85,8 +86,8 @@ public class CustomArray implements CustomArrayObservable {
 
     @Override
     public void attach(CustomArrayObserver observer) {
-        if(customArrayObserver == null){
-            customArrayObserver = (CustomArrayObserverImpl)observer;
+        if (customArrayObserver == null) {
+            customArrayObserver = (CustomArrayObserverImpl) observer;
         } else {
             logger.error("Observer had been attached already");
         }
@@ -94,7 +95,7 @@ public class CustomArray implements CustomArrayObservable {
 
     @Override
     public void detach(CustomArrayObserver observer) {
-        if(customArrayObserver != null){
+        if (customArrayObserver != null) {
             customArrayObserver = null;
         } else {
             logger.error("Observer hab not been used");
@@ -113,11 +114,11 @@ public class CustomArray implements CustomArrayObservable {
         }
     }
 
-    public CustomArrayObserverImpl getCustomCollectionObserver(){
+    public CustomArrayObserverImpl getCustomCollectionObserver() {
         return customArrayObserver;
     }
 
-    public void setCustomArrayObserver(CustomArrayObserverImpl newCustomCollectionObserver){
+    public void setCustomArrayObserver(CustomArrayObserverImpl newCustomCollectionObserver) {
         customArrayObserver = newCustomCollectionObserver;
     }
 }

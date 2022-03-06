@@ -12,7 +12,6 @@ import java.util.Optional;
 import java.util.OptionalDouble;
 
 public class ArrayCalculateServiceTest extends Assert {
-    private static final Logger logger = LogManager.getLogger();
     private final int[] TEST_ARRAY = {5, 2, 8, 11, 9};
     CustomArrayCalculateImpl customArrayCalculateImpl = CustomArrayCalculateImpl.getInstance();
 
@@ -23,7 +22,6 @@ public class ArrayCalculateServiceTest extends Assert {
         OptionalDouble actualSum = customArrayCalculateImpl.sumElementsOfArray(customArray);
         int expected = 35;
         assertEquals(actualSum, expected);
-        logger.info("SumElementsOfArrayTest is end");
     }
 
     @Test
@@ -32,6 +30,5 @@ public class ArrayCalculateServiceTest extends Assert {
         OptionalDouble actualAverage = customArrayCalculateImpl.averageOfArray(customArray);
         OptionalDouble expected = OptionalDouble.of(7.0);
         assertEquals(actualAverage, expected);
-        logger.info("AverageOfArrayTest() is end");
     }
 }

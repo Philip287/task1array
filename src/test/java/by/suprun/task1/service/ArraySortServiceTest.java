@@ -10,7 +10,6 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class ArraySortServiceTest {
-    private static final Logger logger = LogManager.getLogger();
     private final int[] TEST_ARRAY = {5, 2, 11, 9, 8};
     CustomArraySortImpl customArraySortImplTest = CustomArraySortImpl.getInstance();
 
@@ -20,7 +19,6 @@ public class ArraySortServiceTest {
         customArraySortImplTest.bubbleSort(customArray);
         CustomArray expected = new CustomArray(1, 2, 5, 8, 9, 11);
         assertEquals(customArray, expected);
-        logger.info("bubbleSortTest is end");
     }
 
     @Test
@@ -29,7 +27,6 @@ public class ArraySortServiceTest {
         customArraySortImplTest.insertionSort(customArray);
         CustomArray expected = new CustomArray(1, 2, 5, 8, 9, 11);
         assertEquals(customArray, expected);
-        logger.info("insertionSortTest is end");
     }
 
     @Test
@@ -38,6 +35,5 @@ public class ArraySortServiceTest {
         customArraySortImplTest.selectionSort(customArray);
         CustomArray expected = new CustomArray(1, 2, 5, 8, 9, 11);
         assertEquals(customArray, expected);
-        logger.info("selectionSortTest is end");
     }
 }
