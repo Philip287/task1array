@@ -8,7 +8,9 @@ import java.util.List;
 public interface CreateCustomArray {
     CustomArray createCustomArray();
 
-    CustomArray createCustomArray(int... elements) throws CustomArrayException;
+    CustomArray createCustomArray(int id, int... elements) throws CustomArrayException;
 
-    List<CustomArray> createCustomArrays(List<int[]> arraysElements) throws CustomArrayException;
+    List<CustomArray> createCustomArrays(int id, List<int[]> arraysElements) throws CustomArrayException;
+
+    CustomArray createRandomArray() throws CustomArrayException;
 }

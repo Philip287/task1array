@@ -2,23 +2,22 @@ package by.suprun.task1.service.impl;
 
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
-import by.suprun.task1.service.ArraySortService;
-import by.suprun.task1.validate.ArrayValidator;
+import by.suprun.task1.service.CustomArraySortService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ArraySortImpl implements ArraySortService {
-    ArrayValidator validator = new ArrayValidator();
+public class CustomArraySortImpl implements CustomArraySortService {
     private static final Logger logger = LogManager.getLogger();
-    private static ArraySortImpl instance;
+    private static CustomArraySortImpl instance;
 
-    private ArraySortImpl() {
+
+    private CustomArraySortImpl() {
 
     }
 
-    public static ArraySortImpl getInstance() {
+    public static CustomArraySortImpl getInstance() {
         if (instance == null) {
-            return new ArraySortImpl();
+            return new CustomArraySortImpl();
         }
         return instance;
     }
@@ -26,17 +25,16 @@ public class ArraySortImpl implements ArraySortService {
     @Override
     public void bubbleSort(CustomArray customArray) throws CustomArrayException {
         logger.info("Method bubbleSort is called");
-        validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
         boolean sorted = false;
         int temp;
-        while(!sorted) {
+        while (!sorted) {
             sorted = true;
             for (int i = 0; i < tempArray.length - 1; i++) {
-                if (tempArray[i] > tempArray[i+1]) {
+                if (tempArray[i] > tempArray[i + 1]) {
                     temp = tempArray[i];
-                    tempArray[i] = tempArray[i+1];
-                    tempArray[i+1] = temp;
+                    tempArray[i] = tempArray[i + 1];
+                    tempArray[i + 1] = temp;
                     sorted = false;
                 }
             }
@@ -47,7 +45,6 @@ public class ArraySortImpl implements ArraySortService {
     @Override
     public void insertionSort(CustomArray customArray) throws CustomArrayException {
         logger.info("Method quickSort is called");
-        validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
         for (int i = 1; i < tempArray.length; i++) {
             int current = tempArray[i];
@@ -64,12 +61,11 @@ public class ArraySortImpl implements ArraySortService {
     @Override
     public void selectionSort(CustomArray customArray) throws CustomArrayException {
         logger.info("Method shellSort is called");
-        validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
         for (int i = 0; i < tempArray.length; i++) {
             int min = tempArray[i];
             int minId = i;
-            for (int j = i+1; j < tempArray.length; j++) {
+            for (int j = i + 1; j < tempArray.length; j++) {
                 if (tempArray[j] < min) {
                     min = tempArray[j];
                     minId = j;

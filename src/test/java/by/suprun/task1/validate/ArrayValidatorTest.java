@@ -8,11 +8,11 @@ import org.testng.annotations.Test;
 
 public class ArrayValidatorTest {
     private static final Logger logger = LogManager.getLogger();
-    ArrayValidator validator = new ArrayValidator();
+    ArrayValidator validator = ArrayValidator.getInstance();
 
     @Test(expectedExceptions = NullPointerException.class)
     public void validateToEmptyTest() throws CustomArrayException {
-        CustomArray customArrayTestNull = new CustomArray(null);
+        CustomArray customArrayTestNull = new CustomArray();
         validator.validateToEmpty(customArrayTestNull);
     }
 

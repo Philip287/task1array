@@ -16,12 +16,12 @@ public class CustomArrayParserImpl implements CustomArrayParser {
     @Override
     public int[] parseScanLine(String line) throws CustomArrayException {
         logger.info("Method parseScanLine start");
-        CustomArrayValidate customArrayValidate = new CustomArrayValidate();
+        CustomArrayValidate customArrayValidate = CustomArrayValidate.getInstance();
         int[] arrayElements;
         if (customArrayValidate.isArrayLineIsValid(line)) {
             line = line.replaceAll("\\s", "");
             if (!line.isEmpty()) {
-                String[] lineParts = line.split(";");
+                String[] lineParts = line.split(",");
                 arrayElements = new int[lineParts.length];
                 for (int i = 0; i < arrayElements.length; i++) {
                     arrayElements[i] = Integer.parseInt(lineParts[i]);
@@ -39,7 +39,7 @@ public class CustomArrayParserImpl implements CustomArrayParser {
     @Override
     public List<int[]> parseListString(List<String> lines) throws CustomArrayException {
         logger.info("Method parseListString is start");
-        CustomArrayValidate customArrayValidate = new CustomArrayValidate();
+        CustomArrayValidate customArrayValidate = CustomArrayValidate.getInstance();
         List<int[]> arrays = new ArrayList<>();
         int[] currentArray;
         if (lines == null || lines.isEmpty()) {
@@ -56,5 +56,4 @@ public class CustomArrayParserImpl implements CustomArrayParser {
         }
         return arrays;
     }
-
 }

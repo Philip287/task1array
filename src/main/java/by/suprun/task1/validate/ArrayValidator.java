@@ -7,6 +7,18 @@ import org.apache.logging.log4j.Logger;
 
 public class ArrayValidator {
     private static final Logger logger = LogManager.getLogger(ArrayValidator.class.getName());
+    private static ArrayValidator instance;
+
+    private ArrayValidator() {
+
+    }
+
+    public static ArrayValidator getInstance() {
+        if (instance == null) {
+            return new ArrayValidator();
+        }
+        return instance;
+    }
 
     public boolean validateToEmpty(CustomArray array) throws CustomArrayException {
         if (array == null || array.getArray().length == 0) {

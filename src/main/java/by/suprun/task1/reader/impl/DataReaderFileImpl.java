@@ -82,7 +82,7 @@ public class DataReaderFileImpl implements DataReaderFile {
         try {
             while (bufferedReader.ready()) {
                 currentLine = bufferedReader.readLine();
-                CustomArrayValidate validator = new CustomArrayValidate();
+                CustomArrayValidate validator = CustomArrayValidate.getInstance();
                 if (validator.isArrayLineIsValid(currentLine)) {
                     return currentLine;
                 }

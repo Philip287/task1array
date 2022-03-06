@@ -7,18 +7,18 @@ import by.suprun.task1.validate.ArrayValidator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ArrayChangeImpl implements ArrayChangeService {
-    private static final ArrayValidator validator = new ArrayValidator();
+public class CustomArrayChangeImpl implements ArrayChangeService {
+    //private static final ArrayValidator validator = new ArrayValidator();
     private static final Logger logger = LogManager.getLogger();
-    private static ArrayChangeImpl instance;
+    private static CustomArrayChangeImpl instance;
 
-    private ArrayChangeImpl() {
+    private CustomArrayChangeImpl() {
 
     }
 
-    public static ArrayChangeImpl getInstance() {
+    public static CustomArrayChangeImpl getInstance() {
         if (instance == null) {
-            return new ArrayChangeImpl();
+            return new CustomArrayChangeImpl();
         }
         return instance;
     }
@@ -26,7 +26,7 @@ public class ArrayChangeImpl implements ArrayChangeService {
     @Override
     public void changeElement(CustomArray customArray, int position, int elementToAdd) throws CustomArrayException {
         logger.info("Method changeElements is called");
-        validator.validateToEmpty(customArray);
+        //validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
         if (position <= tempArray.length && position >= 0) {
             tempArray[position] = elementToAdd;

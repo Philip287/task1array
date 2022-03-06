@@ -2,59 +2,64 @@ package by.suprun.task1.service.impl;
 
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
-import by.suprun.task1.service.ArrayFindService;
-import by.suprun.task1.validate.ArrayValidator;
+import by.suprun.task1.service.CustomArrayFindService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class ArrayFindImpl implements ArrayFindService {
-    private static final ArrayValidator validator = new ArrayValidator();
-    private static final Logger logger = LogManager.getLogger();
-    private static ArrayFindImpl instance;
+import java.util.OptionalInt;
 
-    private ArrayFindImpl() {
+public class CustomArrayFindImpl implements CustomArrayFindService {
+    private static final Logger logger = LogManager.getLogger();
+    private static CustomArrayFindImpl instance;
+
+    private CustomArrayFindImpl() {
 
     }
 
-    public static ArrayFindImpl getInstance() {
+    public static CustomArrayFindImpl getInstance() {
         if (instance == null) {
-            return new ArrayFindImpl();
+            return new CustomArrayFindImpl();
         }
         return instance;
     }
 
     @Override
-    public int arrayMin(CustomArray customArray) throws CustomArrayException {
+    public OptionalInt arrayMin(CustomArray customArray) throws CustomArrayException {
         logger.info("Method minimum is called");
-        validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
-        int minElement = tempArray[0];
-        for (int elementOfArray : tempArray) {
-            if (elementOfArray < minElement) {
-                minElement = elementOfArray;
+        if (tempArray.length == 0) {
+            return OptionalInt.empty();
+        } else {
+            int minElement = tempArray[0];
+            for (int elementOfArray : tempArray) {
+                if (elementOfArray < minElement) {
+                    minElement = elementOfArray;
+                }
             }
+            return OptionalInt.of(minElement);
         }
-        return minElement;
     }
 
     @Override
-    public int arrayMax(CustomArray customArray) throws CustomArrayException {
+    public OptionalInt arrayMax(CustomArray customArray) throws CustomArrayException {
         logger.info("Method maximum is called");
-        validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
-        int maxElement = tempArray[0];
-        for (int elementOfArray : tempArray) {
-            if (elementOfArray > maxElement) {
-                maxElement = elementOfArray;
+        if (tempArray.length == 0) {
+            return OptionalInt.empty();
+        } else {
+            int maxElement = tempArray[0];
+            for (int elementOfArray : tempArray) {
+                if (elementOfArray > maxElement) {
+                    maxElement = elementOfArray;
+                }
             }
+            return OptionalInt.of(maxElement);
         }
-        return maxElement;
     }
 
     @Override
     public int countNegativeNumbersInArray(CustomArray customArray) throws CustomArrayException {
         logger.info("Method countNegativeNumbersInArray is called");
-        validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
         int count = 0;
         for (int elementOfArray : tempArray) {
@@ -68,7 +73,6 @@ public class ArrayFindImpl implements ArrayFindService {
     @Override
     public int countPositiveNumbersInArray(CustomArray customArray) throws CustomArrayException {
         logger.info("Method countPositiveNumbersInArray is called");
-        validator.validateToEmpty(customArray);
         int[] tempArray = customArray.getArray();
         int count = 0;
         for (int elementOfArray : tempArray) {

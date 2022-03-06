@@ -9,8 +9,7 @@ import static org.testng.Assert.assertTrue;
 
 public class CustomArrayValidatorTest {
     private static final Logger logger = LogManager.getLogger();
-    CustomArrayValidate customArrayValidate = new CustomArrayValidate();
-
+    CustomArrayValidate customArrayValidate = CustomArrayValidate.getInstance();
     @Test
     public void validateToEmptyTestGoodString() {
         logger.info("Method validateToEmptyTestGoodString is start");
