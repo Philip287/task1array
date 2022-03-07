@@ -1,4 +1,4 @@
-package by.suprun.task1.observer.impl;
+package by.suprun.task1.observer;
 
 import by.suprun.task1.entity.CustomArray;
 

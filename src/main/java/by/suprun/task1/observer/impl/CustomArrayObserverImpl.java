@@ -5,6 +5,7 @@ import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.entity.CustomArrayParameters;
 import by.suprun.task1.entity.Warehouse;
 import by.suprun.task1.exception.CustomArrayException;
+import by.suprun.task1.observer.CustomArrayEvent;
 import by.suprun.task1.observer.CustomArrayObserver;
 import by.suprun.task1.service.impl.CustomArrayCalculateImpl;
 import by.suprun.task1.service.impl.CustomArrayFindImpl;

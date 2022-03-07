@@ -1,6 +1,5 @@
 package by.suprun.task1.repository;
 
-import by.suprun.task1.creator.CreateCustomArray;
 import by.suprun.task1.creator.imp.CreatorCustomArrayImpl;
 import by.suprun.task1.entity.CustomArray;
 import by.suprun.task1.exception.CustomArrayException;
@@ -25,6 +24,6 @@ public class EqualIdSpecificationTest {
             CustomArray temp = creatorCustomArray.createRandomArray(i*10, i*33);
             repository.addArray(temp);
         }
-        Assert.assertEquals(customArray, repository.querry(specification).get(0));
+        Assert.assertEquals(customArray, repository.query(specification).get(0));
     }
 }

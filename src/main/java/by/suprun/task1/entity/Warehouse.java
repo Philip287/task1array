@@ -14,7 +14,7 @@ public class Warehouse {
 
 
     public Warehouse() {
-        this.mapStatistics = new HashMap<Integer, CustomArrayParameters>();
+        this.mapStatistics = new HashMap<>();
     }
 
     public static Warehouse getInstance(){

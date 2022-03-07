@@ -63,7 +63,7 @@ public class CustomArrayRepository implements CustomCollectionRepository {
     }
 
     @Override
-    public List<CustomArray> querry(Specification specification) {
+    public List<CustomArray> query(Specification specification) {
         List<CustomArray> list = arrays.stream().
                 filter(specification::specify).
                 collect(Collectors.toList());

@@ -12,6 +12,6 @@ public interface CustomCollectionRepository {
     void removeAllArrays(List<CustomArray> customArrays);
     CustomArray get(int index);
     void set(int index, CustomArray customArray);
-    List<CustomArray> querry(Specification specification);
+    List<CustomArray> query(Specification specification);
     List<CustomArray> sort(Comparator<CustomArray> comparator);
 }

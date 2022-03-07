@@ -1,9 +1,9 @@
 package by.suprun.task1.entity;
 
 import by.suprun.task1.exception.CustomArrayException;
+import by.suprun.task1.observer.CustomArrayEvent;
 import by.suprun.task1.observer.CustomArrayObservable;
 import by.suprun.task1.observer.CustomArrayObserver;
-import by.suprun.task1.observer.impl.CustomArrayEvent;
 import by.suprun.task1.observer.impl.CustomArrayObserverImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

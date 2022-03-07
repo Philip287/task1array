@@ -1,7 +1,5 @@
 package by.suprun.task1.observer;
 
-import by.suprun.task1.observer.impl.CustomArrayEvent;
-
 public interface CustomArrayObserver {
     void replaceStatistic(CustomArrayEvent event);
 
