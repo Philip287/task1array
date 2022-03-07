@@ -13,5 +13,5 @@ public interface CreateCustomArray {
 
     List<CustomArray> createCustomArrays(int id, List<int[]> arraysElements) throws CustomArrayException;
 
-    CustomArray createRandomArray() throws CustomArrayException, NoSuchAlgorithmException;
+    CustomArray createRandomArray(int lengthBoundary, int elementBoundary) throws CustomArrayException, NoSuchAlgorithmException;
 }

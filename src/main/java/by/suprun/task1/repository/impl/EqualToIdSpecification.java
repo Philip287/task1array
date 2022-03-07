@@ -6,7 +6,7 @@ import by.suprun.task1.repository.Specification;
 public class EqualToIdSpecification implements Specification {
     private int id;
 
-    public void EqualIdSpecification(int newId) {
+    public EqualToIdSpecification(int newId) {
         id = newId;
     }
 

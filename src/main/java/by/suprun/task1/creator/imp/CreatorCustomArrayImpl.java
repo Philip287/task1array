@@ -55,13 +55,13 @@ public class CreatorCustomArrayImpl implements CreateCustomArray {
 
 
     @Override
-    public CustomArray createRandomArray() throws CustomArrayException, NoSuchAlgorithmException {
+    public CustomArray createRandomArray(int lengthBoundary, int elementBoundary) throws CustomArrayException, NoSuchAlgorithmException {
         Random random = SecureRandom.getInstanceStrong();
-        int length = random.nextInt(15);
+        int length = random.nextInt(lengthBoundary);
         int id = IdCustomArrayGenerator.getNextId();
         int[] arr = new int[length];
         for (int i = 0; i < length; i++) {
-            arr[i] = random.nextInt(15);
+            arr[i] = random.nextInt(elementBoundary);
         }
         return new CustomArray(id, arr);
     }
